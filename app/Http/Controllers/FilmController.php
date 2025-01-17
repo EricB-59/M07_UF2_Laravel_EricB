@@ -109,4 +109,21 @@ class FilmController extends Controller
         }
         return view('films.list', ["films" => $new_films, "title" => $title]);
     }
+
+    public function sortFilms()
+    {        
+        $arrayfilms = [];
+    
+        $title = "Peliculas ordenadas";    
+        $films = FilmController::readFilms();
+
+        foreach ($films as $film) {
+                $arrayfilms[] = $film;
+        }
+        usort($arrayfilms, function ($a, $b) {
+            return $a['year'] <=> $b['year'];
+        });
+
+        return view('films.list', ["films" => $arrayfilms, "title" => $title]);
+    }
 }

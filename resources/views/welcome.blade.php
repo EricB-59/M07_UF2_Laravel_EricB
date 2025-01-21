@@ -21,6 +21,33 @@
         <li><a href="/filmout/sortFilms">Ordenar pelis</a></li>
         <li><a href="/filmout/countFilms">Contar pelis</a></li>
     </ul>
+    <form action="filmin/createFilm" method="POST">
+        <label for="nameFilm">
+            Name
+            <input type="text" name="nameFilm" required>
+        </label><br>
+        <label for="yearFilm">
+            Year
+            <input type="number" name="yearFilm" required>
+        </label><br>
+        <label for="genreFilm">
+            Genre
+            <input type="text" name="genreFilm" required>
+        </label><br>
+        <label for="countryFilm">
+            Country
+            <input type="text" name="countryFilm" required>
+        </label><br>
+        <label for="durationFilm">
+            Duration
+            <input type="number" name="durationFilm" required>
+        </label><br>
+        <label for="urlFilm">
+            Url
+            <input type="url" name="urlFilm" required>
+        </label><br>
+        <input type="submit" value="SEND">
+    </form>
     <!-- Add Bootstrap JS and Popper.js (required for Bootstrap) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

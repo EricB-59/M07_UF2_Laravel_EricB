@@ -15,7 +15,7 @@ class ValidateUrl
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $url = $request->route('url');
+        $url = $request->urlFilm;
         if (!filter_var($url, FILTER_VALIDATE_URL)) {
             return redirect('/');
         } 

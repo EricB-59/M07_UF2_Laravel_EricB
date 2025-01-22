@@ -21,7 +21,8 @@
         <li><a href="/filmout/sortFilms">Ordenar pelis</a></li>
         <li><a href="/filmout/countFilms">Contar pelis</a></li>
     </ul>
-    <form action="filmin/createFilm" method="POST">
+    <form action="{{ action('App\Http\Controllers\FilmController@createFilm') }}" method="POST">
+        {{csrf_field()}}
         <label for="nameFilm">
             Name
             <input type="text" name="nameFilm" required>

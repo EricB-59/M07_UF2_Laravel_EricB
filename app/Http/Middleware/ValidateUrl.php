@@ -17,7 +17,7 @@ class ValidateUrl
     {
         $url = $request->urlFilm;
         if (!filter_var($url, FILTER_VALIDATE_URL)) {
-            return redirect('/');
+            return redirect('/')->withErrors(['wrongUrl' => 'Not valid url']);
         } 
         return $next($request);
     }

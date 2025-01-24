@@ -55,7 +55,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <!-- Include any additional HTML or Blade directives here -->
-
+    @error('wrongUrl')
+        <span style="color: red">{{$message}}</span>
+    @enderror
+    @error('duplicateFilm')
+    <span style="color: red">{{$message}}</span>
+    @enderror
 </body>
 
 </html>

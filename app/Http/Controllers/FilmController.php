@@ -155,11 +155,28 @@ class FilmController extends Controller
             "duration" => $request->input("durationFilm"),
             "img_url" => $request->input("urlFilm")
         ];
+
+        if (FilmController::isFilm($film['name'])) {
+            return redirect('/')->withErrors(['duplicateFilm' => 'This film exists']);
+        }
+
         $films = FilmController::readFilms();
         array_push($films, $film);
 
         Storage::put("/public/films.json", contents: json_encode($films));
 
-        return view("films.list", ["films"=> $films,"title"=> "hola"]);
+        return view("films.list", ["films"=> $films,"title"=> "Pelicula: ".$film["name"].", creada con exito"]);
+    }
+
+    public function isFilm($name): bool {
+        $films = FilmController::readFilms();
+
+        foreach ($films as $film) {
+            if ($film["name"] === $name) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

@@ -22,7 +22,7 @@
         <li><a href="/filmout/countFilms">Contar pelis</a></li>
     </ul>
     <form action="{{ action('App\Http\Controllers\FilmController@createFilm') }}" method="POST">
-        {{csrf_field()}}
+        {{ csrf_field() }}
         <label for="nameFilm">
             Name
             <input type="text" name="nameFilm" required>
@@ -56,10 +56,10 @@
 
     <!-- Include any additional HTML or Blade directives here -->
     @error('wrongUrl')
-        <span style="color: red">{{$message}}</span>
+        <span style="color: red">{{ $message }}</span>
     @enderror
     @error('duplicateFilm')
-    <span style="color: red">{{$message}}</span>
+        <span style="color: red">{{ $message }}</span>
     @enderror
 </body>
 

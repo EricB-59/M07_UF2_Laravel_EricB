@@ -40,35 +40,11 @@
         "img_url": "https://pics.filmaffinity.com/La_llegada-686966912-large.jpg"
     },
     {
-        "name": "re",
-        "year": "4",
-        "genre": "re",
-        "country": "re",
-        "duration": "43",
-        "img_url": "https://es.web.img2.acsta.net/medias/nmedia/18/79/45/34/20253823.jpg"
-    },
-    {
-        "name": "Shrek",
-        "year": "1923",
-        "genre": "Comedy",
-        "country": "Spain",
-        "duration": "23",
-        "img_url": "https://www.pngegg.com/en/png-wsgga"
-    },
-    {
-        "name": "Shrek 2",
+        "name": "Spiderman",
         "year": null,
-        "genre": "Comedy",
-        "country": "Spain",
-        "duration": "324",
-        "img_url": "https://www.pngegg.com/en/png-wsgga"
-    },
-    {
-        "name": "Shrek 2",
-        "year": null,
-        "genre": "Comedy",
-        "country": "Spain",
-        "duration": "324",
-        "img_url": "https://www.pngegg.com/en/png-wsgga"
+        "genre": "Action",
+        "country": "USA",
+        "duration": "240",
+        "img_url": "https://cloudfront-eu-central-1.images.arcpublishing.com/diarioas/N7WYMQTGPFCX5EWVBVWXJEHO24.jpg"
     }
 ]

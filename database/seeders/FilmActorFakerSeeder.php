@@ -14,6 +14,8 @@ class FilmActorFakerSeeder extends Seeder
      */
     public function run(): void
     {
+        $faker = Faker::create();
+
         $filmId = DB::table('films')->inRandomOrder()->value('id');
 
         $actorIds = DB::table('actors')->inRandomOrder()->limit(3)->pluck('id')->toArray();
@@ -26,8 +28,8 @@ class FilmActorFakerSeeder extends Seeder
             DB::table('films_actors')->insert([
                 'film_id' => $filmId,
                 'actor_id' => $actorId,
-                'created_at' => now(),
-                'updated_at' => now(),
+                'created_at' => $faker->dateTimeBetween("-10 years", "now"),
+                'updated_at' => $faker->dateTimeBetween("-10 years", "now"),
             ]);
         }
     }

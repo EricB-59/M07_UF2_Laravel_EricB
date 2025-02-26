@@ -15,10 +15,10 @@ class FilmFakerSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
-        
+
         $lastInsertedId = DB::table("films")->max("id");
 
-        for ($i = $lastInsertedId; $i < $lastInsertedId+20; $i++) {
+        for ($i = $lastInsertedId; $i < $lastInsertedId + 20; $i++) {
             DB::table("films")->insert([
                 "id" => $i + 1,
                 "name" => $faker->name,
@@ -30,10 +30,10 @@ class FilmFakerSeeder extends Seeder
                     "Fantasy"
                 ]),
                 "country" => $faker->country(),
-                "duration" => $faker->randomNumber(3, true),
+                "duration" => $faker->numberBetween(60, 240),
                 "img_url" => $faker->imageUrl(),
-                "created_at" => $faker->dateTimeBetween("-10 years","now"),
-                "updated_at" => $faker->dateTimeBetween("-10 years","now"),
+                "created_at" => $faker->dateTimeBetween("-10 years", "now"),
+                "updated_at" => $faker->dateTimeBetween("-10 years", "now"),
             ]);
         }
     }

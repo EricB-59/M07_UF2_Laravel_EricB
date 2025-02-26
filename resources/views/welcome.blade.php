@@ -28,7 +28,7 @@
             </label>
             <label for="durationFilm">
                 Duration
-                <input type="number" class="form-control" name="durationFilm" required>
+                <input type="number" class="form-control" name="durationFilm" min="60" max="240" required>
             </label>
             <label for="urlFilm">
                 Url

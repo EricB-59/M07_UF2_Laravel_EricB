@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date("birthdate");
             $table->string("country", 30);
             $table->string("img_url", 255);
+            $table->foreignId('awards_actors_id')->constrained('awards_actors')->cascadeOnDelete();
             $table->timestampsTz(precision: 0);
         });
     }

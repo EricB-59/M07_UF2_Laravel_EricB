@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
+
 class ActorController extends Controller
 {
     /**
@@ -9,6 +12,9 @@ class ActorController extends Controller
      */
     public static function readActor(): array
     {
-        return [];
+        $actors = DB::table('actors')->get();
+        $actorsArray = json_decode(json_encode($actors, true), true);
+
+        return $actorsArray;
     }
 }

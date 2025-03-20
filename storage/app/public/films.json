@@ -46,5 +46,13 @@
         "country": "USA",
         "duration": "240",
         "img_url": "https://cloudfront-eu-central-1.images.arcpublishing.com/diarioas/N7WYMQTGPFCX5EWVBVWXJEHO24.jpg"
+    },
+    {
+        "name": "Test 1 JSON",
+        "year": "2020",
+        "genre": "Comedy",
+        "country": "USA",
+        "duration": "220",
+        "img_url": "https://pics.filmaffinity.com/Forrest_Gump-212765827-large.jpg\""
     }
 ]

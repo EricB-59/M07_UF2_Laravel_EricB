@@ -204,6 +204,8 @@ class FilmController extends Controller
             ]);
         }
 
+        $films = FilmController::readFilms();
+
         return view("films.list", ["films" => $films, "title" => "Pelicula: " . $film["name"] . ", creada con exito"]);
     }
 

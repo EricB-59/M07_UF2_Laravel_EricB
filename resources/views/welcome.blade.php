@@ -1,11 +1,18 @@
 <x-app-layout>
     <div class="container">
-        <h1 class="mt-4">Lista de Películas</h1>
+        <h1 class="mt-4">Películas</h1>
         <ul class="list-group mb-4">
+            <li class="list-group-item"><a href="/filmout/oldFilms">Listar Películas</a></li>
             <li class="list-group-item"><a href="/filmout/oldFilms">Pelis antiguas</a></li>
             <li class="list-group-item"><a href="/filmout/newFilms">Pelis nuevas</a></li>
             <li class="list-group-item"><a href="/filmout/sortFilms">Ordenar pelis</a></li>
             <li class="list-group-item"><a href="/filmout/countFilms">Contar pelis</a></li>
+        </ul>
+        <h1 class="mt-4">Actores</h1>
+        <ul class="list-group mb-4">
+            <li class="list-group-item"><a href="/actorout/listActors">Listar Actores</a></li>
+            <li class="list-group-item"><a href="/actorout/listActorsByDecade">Listar Actores por decada</a></li>
+            <li class="list-group-item"><a href="/actorout/countActors">Contar Actores</a></li>
         </ul>
 
         <form action="{{ action('App\\Http\\Controllers\\FilmController@createFilm') }}" method="POST">

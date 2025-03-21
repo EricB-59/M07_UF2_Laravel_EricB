@@ -11,7 +11,7 @@ class FilmController extends Controller
 {
 
     /**
-     * Read films from Database
+     * Read films from Database and Json
      */
     public static function readFilms(): array
     {
@@ -28,6 +28,22 @@ class FilmController extends Controller
 
         return $films;
     }
+    public static function show()
+    {
+        $filmsJson = Storage::json('/public/films.json');
+        $filmsDB = DB::table('films')->get();
+
+        /**
+         * stdClass to Array 
+         * (https://stackoverflow.com/questions/49047683/laravel-how-to-convert-stdclass-object-to-array)
+         */
+        $filmArray = json_decode(json_encode($filmsDB, true), true);
+
+        $films = Arr::collapse([$filmsJson, $filmArray]);
+
+        return response()->json(json_encode($films));
+    }
+
     /**
      * Read films from JSON
      */

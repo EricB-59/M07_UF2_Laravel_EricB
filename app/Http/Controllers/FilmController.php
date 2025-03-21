@@ -154,18 +154,10 @@ class FilmController extends Controller
 
     public function countFilms()
     {
-        $arrayfilms = [];
-
         $title = "Numeros de peliculas";
-        $films = FilmController::readFilms();
+        $films_count = DB::table("films")->count();
 
-        foreach ($films as $film) {
-            $arrayfilms[] = $film;
-        }
-
-        $count = count($arrayfilms);
-
-        return view('films.count', ["count" => $count, "title" => $title]);
+        return view('films.count', ["count" => $films_count, "title" => $title]);
     }
 
     public function createFilm(Request $request)

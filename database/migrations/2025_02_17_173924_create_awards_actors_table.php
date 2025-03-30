@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('awards_actors', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 50);
+            $table->timestampsTz(precision: 0);
         });
     }
 

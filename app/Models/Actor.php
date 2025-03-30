@@ -27,4 +27,9 @@ class Actor extends Model
     {
         return $this->belongsToMany(Film::class);
     }
+
+    public function awards()
+    {
+        return $this->belongsTo(AwardsActor::class);
+    }
 }

@@ -2,19 +2,19 @@
 
 namespace Database\Seeders;
 
-use App\Models\Film;
+use App\Models\AwardsActor;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 
-class FilmFakerSeeder extends Seeder
+class AwardsFakerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Film::factory()->count(20)->create();
+        AwardsActor::factory()->count(10)->create();
     }
 }

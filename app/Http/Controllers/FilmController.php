@@ -6,10 +6,28 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use App\Models\Film;
 
 class FilmController extends Controller
 {
+    // ? API REST FUNCTIONS
+    public static function show()
+    {
+        $filmsJson = Storage::json('/public/films.json');
+        $filmsDB = DB::table('films')->get();
 
+        /**
+         * stdClass to Array 
+         * (https://stackoverflow.com/questions/49047683/laravel-how-to-convert-stdclass-object-to-array)
+         */
+        $filmArray = json_decode(json_encode($filmsDB, true), true);
+
+        $films = Arr::collapse([$filmsJson, $filmArray]);
+
+        return response()->json(json_encode($films));
+    }
+
+    // * WEB FUNCTIONS
     /**
      * Read films from Database and Json
      */
@@ -28,21 +46,7 @@ class FilmController extends Controller
 
         return $films;
     }
-    public static function show()
-    {
-        $filmsJson = Storage::json('/public/films.json');
-        $filmsDB = DB::table('films')->get();
 
-        /**
-         * stdClass to Array 
-         * (https://stackoverflow.com/questions/49047683/laravel-how-to-convert-stdclass-object-to-array)
-         */
-        $filmArray = json_decode(json_encode($filmsDB, true), true);
-
-        $films = Arr::collapse([$filmsJson, $filmArray]);
-
-        return response()->json(json_encode($films));
-    }
 
     /**
      * Read films from JSON
@@ -171,7 +175,7 @@ class FilmController extends Controller
     public function countFilms()
     {
         $title = "Numeros de peliculas";
-        $films_count = DB::table("films")->count();
+        $films_count = Film::count();
 
         return view('films.count', ["count" => $films_count, "title" => $title]);
     }

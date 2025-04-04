@@ -2,7 +2,7 @@
     <div class="container">
         <h1 class="mt-4">Películas</h1>
         <ul class="list-group mb-4">
-            <li class="list-group-item"><a href="/filmout/oldFilms">Listar Películas</a></li>
+            <li class="list-group-item"><a href="/filmout/listFilms">Listar Películas</a></li>
             <li class="list-group-item"><a href="/filmout/oldFilms">Pelis antiguas</a></li>
             <li class="list-group-item"><a href="/filmout/newFilms">Pelis nuevas</a></li>
             <li class="list-group-item"><a href="/filmout/sortFilms">Ordenar pelis</a></li>

@@ -8,6 +8,15 @@ use Illuminate\Support\Facades\DB;
 
 class ActorController extends Controller
 {
+    // ? API REST FUNCTIONS
+    public static function index()
+    {
+        $actors = Actor::with('films')->get();
+
+        return response()->json($actors);
+    }
+
+    // * WEB FUNCTIONS
     public static function countActors(): View
     {
         $title = 'Numero de actores';

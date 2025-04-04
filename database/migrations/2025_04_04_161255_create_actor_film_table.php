@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('films_actors', function (Blueprint $table) {
+        Schema::create('actor_film', function (Blueprint $table) {
             $table->foreignId('film_id')->constrained('films')->cascadeOnDelete();
             $table->foreignId('actor_id')->constrained('actors')->cascadeOnDelete();
             $table->timestampsTz(precision: 0);
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('films_actors');
+        Schema::dropIfExists('actor_film');
     }
 };

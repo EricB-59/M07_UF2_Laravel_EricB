@@ -8,17 +8,16 @@ use App\Models\Film;
 class FilmController extends Controller
 {
     // ? API REST FUNCTIONS
-    public static function show()
+    public static function index()
     {
         $films = Film::with('actors')->get();
 
-        return response()->json(json_encode($films));
+        return response()->json($films);
     }
 
     // * WEB FUNCTIONS
     /**
      * Count films
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function countFilms()
     {
